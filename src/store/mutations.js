@@ -1,5 +1,7 @@
 export const STORAGE_KEY = 'todos-vuejs'
 
+const GET_USER_LIST = 'GET_USER_LIST'
+
 // for testing
 if (navigator.userAgent.indexOf('PhantomJS') > -1) {
   window.localStorage.clear()
@@ -20,7 +22,7 @@ export const mutations = {
   changemsg (state, text) {
     state.msg = text
   },
-  getuserlist (state, payload) {
+  [GET_USER_LIST] (state, payload) {
     state.userlist = state.userlist.concat(payload)
   }
 }
