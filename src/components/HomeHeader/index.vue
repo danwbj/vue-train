@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <x-header>This is the page title.</x-header>
+  <div class='home-header'>
+     <x-header>{{ title }}</x-header>
   </div>
 </template>
 
@@ -9,17 +9,13 @@ import { XHeader, Actionsheet, TransferDom, ButtonTab, ButtonTabItem } from 'vux
 
 export default {
   name: 'HomeHeader',
+  props: ['title'],
   data () {
     return {
       directives: {
         TransferDom
       },
-      msg: 'HomeHeader',
-      menus: {
-        menu1: 'Take Photo',
-        menu2: 'Choose from photos'
-      },
-      showMenus: false
+      msg: 'HomeHeader'
     }
   },
   components: {
@@ -33,7 +29,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.vux-header {
+  background:#666
 }
 </style>

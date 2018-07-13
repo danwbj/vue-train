@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+  <!-- transition 过渡效果 -->
+    <transition name="slide">
+      <router-view/>
+    </transition>
   </div>
 </template>
 <script>
@@ -20,5 +23,9 @@ export default {
 }
 *{
   margin:0
+}
+
+body {
+  background-color: #ffffff;
 }
 </style>

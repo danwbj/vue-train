@@ -9,7 +9,6 @@ export const mutations = {
   addTodo (state, todo) {
     state.todos.push(todo)
   },
-
   removeTodo (state, todo) {
     state.todos.splice(state.todos.indexOf(todo), 1)
   },
@@ -20,5 +19,8 @@ export const mutations = {
   },
   changemsg (state, text) {
     state.msg = text
+  },
+  getuserlist (state, payload) {
+    state.userlist = state.userlist.concat(payload)
   }
 }

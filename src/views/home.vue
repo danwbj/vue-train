@@ -1,39 +1,54 @@
 <template>
   <div class="hello">
-   <home-header></home-header>
+    <home-header v-bind:title="title"></home-header>
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <x-button class="homebtn" type="primary" @click.native="golist">go list</x-button>
   </div>
 </template>
 
 <script>
-import HomeHeader from '@/components/HomeHeader.vue'
-import { mapState } from 'vuex'
+import { XButton } from 'vux'
+import HomeHeader from '@/components/HomeHeader'
 export default {
   name: 'Home',
-  data () {
-    return {}
-  },
   components: {
-    'home-header': HomeHeader
+    XButton,
+    HomeHeader
   },
-  mounted: function () {
-    this.changemsg('hhhhhh')
-  },
-  methods: {
-    changemsg: function (text) {
-      this.$store.dispatch('changemsg', text)
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      title: 'titleddd'
     }
   },
-  computed: {
-    ...mapState({
-      msg: state => state.msg
-    })
+  methods: {
+    gohome () {
+      this.$router.push({ path: 'home' })
+    },
+    golist () {
+      this.$router.push({ path: 'userlist' })
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.homebtn{
+  width:200px;
+}
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
 </style>
