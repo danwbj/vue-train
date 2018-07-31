@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <loading v-model="isLoading"></loading>
   <!-- transition 过渡效果 -->
     <transition name="slide">
       <router-view/>
@@ -7,8 +8,18 @@
   </div>
 </template>
 <script>
+import { Loading } from 'vux'
+import { mapState } from 'vuex'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Loading
+  },
+  computed: {
+    ...mapState({
+      isLoading: state => state.vux.isLoading
+    })
+  }
 }
 </script>
 
