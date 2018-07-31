@@ -3,6 +3,8 @@
     <home-header v-bind:title="title"></home-header>
     <h1>{{ msg }}</h1>
     <x-button class="homebtn" type="primary" @click.native="golist">go list</x-button>
+    <x-button class="homebtn" type="primary" @click.native="gopage1">go page1</x-button>
+    <x-button class="homebtn" type="primary" @click.native="gopage2">go page2</x-button>
   </div>
 </template>
 
@@ -27,6 +29,13 @@ export default {
     },
     golist () {
       this.$router.push({ path: 'userlist' })
+    },
+    gopage1 () {
+      console.log(this.$router)
+      this.$router.push({ path: 'page1' })
+    },
+    gopage2 () {
+      this.$router.push({ path: 'page2' })
     }
   }
 }

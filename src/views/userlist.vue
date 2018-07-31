@@ -22,6 +22,7 @@ export default {
   // 实例创建完成请求接口数据
   created: function () {
     this.getuserlist({})
+    // this.getInfoConfig()
   },
   mounted: function () {
     this.changemsg('dddd')
@@ -34,7 +35,8 @@ export default {
       //   'changemsg', // 将 `this.changemsg()` 映射为 `this.$store.dispatch('changemsg')`
       // `mapActions` 也支持载荷：
       'changemsg', // 将 `this.changemsg(amount)` 映射为 `this.$store.dispatch('changemsg', text)`
-      'getuserlist'
+      'getuserlist',
+      'getInfoConfig'
     ])
   },
   computed: {
@@ -48,6 +50,24 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="less">
+.flex-content{
+  display:flex;
+  flex-direction: row;
+  background-color: white;
+    .flex-left{
+      width:100px;
+      height:100px;
+      background:#ddd;
+      border:1px solid red;
+      text-align: center;
+    }
+  .flex-right{
+    width:100px;
+    height:100px;
+    background:#ddd;
+    border:1px solid red;
+    text-align: center;
+  }
+}
 </style>

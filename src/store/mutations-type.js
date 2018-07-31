@@ -1,0 +1,5 @@
+export default {
+  GET_USER_LIST: 'GET_USER_LIST',
+  MERGE_STATE: 'MERGE_STATE',
+  RESET_STATE: 'RESET_STATE'
+}

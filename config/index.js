@@ -4,13 +4,24 @@
 
 const path = require('path')
 
+const apiurl = 'http://16.158.50.144:7300/mock/5b57dc17c33777000e5a4217/portal';
+// const apiurl = 'http://116.196.109.213:7300/mock/5b55427653adfe000ed5769e';
+
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: apiurl,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
